@@ -3,10 +3,17 @@ $('html,body').animate({scrollTop:0})
 let headLines=$('.headLine')
 
 for(i=0;i<headLines.length;i++){
+    
+    
     $(headLines[i]).click(function(e){
     
+    
         $(e.target).next().slideToggle(500)
+        $(e.target).next().siblings('.move-text').slideUp(500)
+        
+        
     })
+
 
 }
 
@@ -77,10 +84,11 @@ let area =document.querySelector('#tArea')
 area.addEventListener('input' , function(){
     let textareaLenght= $('#tArea').val().length
 
-    $('.charNum').html(textareaLenght)
+    $('.charNum').html(100-textareaLenght)
 
     if(textareaLenght>100){
 
+    //    $('.charNum').html(100-textareaLenght)
 $('#tArea').next().removeClass('d-none');
 $('.viewNum').addClass('d-none')
 
